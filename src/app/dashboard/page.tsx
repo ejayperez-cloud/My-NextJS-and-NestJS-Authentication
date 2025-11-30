@@ -1,7 +1,7 @@
 'use client'
 
 import { getToken } from "@/lib/auth";
-import { jwtDecode } from "jwt-decode";
+import {jwtDecode} from "jwt-decode";
 
 interface JwtPayload {
   sub: number;
@@ -40,7 +40,7 @@ export default function DashboardHome() {
         {token && (
           <div className="mt-4">
             <p className="text-red-400 font-semibold">Your Bearer Token</p>
-            <pre className="p-3 bg-zinc-800 text-gray-200 text-xs mt-2 rounded-lg border border-red-700 break-all">
+            <pre className="p-3 bg-zinc-800 text-gray-200 text-xs mt-2 rounded-lg border border-red-700 overflow-x-auto whitespace-nowrap max-w-full">
               {token}
             </pre>
           </div>
