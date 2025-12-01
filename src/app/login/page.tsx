@@ -60,6 +60,7 @@ export default function LoginPage() {
               </p>
             )}
 
+            {/* USERNAME FIELD */}
             <div>
               <Input
                 className="bg-zinc-800 text-white border-red-600 focus:border-red-500"
@@ -68,10 +69,13 @@ export default function LoginPage() {
                 onChange={(e) => setUsername(e.target.value)}
               />
               {fieldErrors.username && (
-                <p className="text-red-400 text-sm mt-1">{fieldErrors.username}</p>
+                <p className="text-red-400 text-sm mt-1">
+                  {fieldErrors.username}
+                </p>
               )}
             </div>
 
+            {/* PASSWORD FIELD */}
             <div>
               <Input
                 type="password"
@@ -82,3 +86,30 @@ export default function LoginPage() {
               />
               {fieldErrors.password && (
                 <p className="text-red-400 text-sm mt-1">
+                  {fieldErrors.password}
+                </p>
+              )}
+            </div>
+
+            <Button
+              className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold hover:underline cursor-pointer"
+              type="submit"
+            >
+              Login
+            </Button>
+
+            <p className="text-center text-sm text-gray-300 mt-2">
+              Don’t have an account yet?{" "}
+              <span
+                onClick={() => router.push('/register')}
+                className="text-red-500 font-semibold hover:underline cursor-pointer"
+              >
+                Register
+              </span>
+            </p>
+          </form>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
